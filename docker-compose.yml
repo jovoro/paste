@@ -1,0 +1,15 @@
+services:
+  php:
+    image: php:apache
+    restart: unless-stopped
+    volumes:
+      - ./data/wwwroot:/var/www/html
+    labels:
+      - traefik.http.routers.jovoro-paste.rule=Host(`paste.jovoro.ch`)
+      - traefik.http.routers.jovoro-paste.tls=true
+      - traefik.http.routers.jovoro-paste.tls.certresolver=myresolver
+    networks:
+      - web
+networks:
+  web:
+    external: true

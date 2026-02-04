@@ -1,0 +1,11 @@
+Paste
+=====
+
+Simple script to act as web-based clipboard, so to speak. The idea is also simple:
+
+$ generate_important_output.pl | curl -X POST --data @- https://paste.jovoro.ch/
+abc123def
+
+$ curl https://paste.jovoro.ch/?id=abc123def | process_important_output.pl
+
+
