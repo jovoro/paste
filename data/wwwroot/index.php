@@ -6,7 +6,7 @@ if($_SERVER["REQUEST_METHOD"] != "POST") {
 	if(!isset($_GET["id"])) {
 		header("Content-Type: text/html");
 		header($_SERVER["SERVER_PROTOCOL"]." 200 OK");
-		echo "<html><head><title>Paste</title></head><body><h1>Paste</h2><p>This is a web based clipboard. To paste stuff, do something like this:</p><pre>echo helloworld | curl -X POST --data @- https://".$_SERVER["SERVER_NAME"]."/</pre><p>You will get an identification string. To retrieve stuff do:</p><pre>curl https://".$_SERVER["SERVER_NAME"]."/?id=&lt;identification-string&gt;</pre><hr><small>Copyright (c) 2026 J. von Rotz <a href=\"https://github.com/jovoro/paste\"><address>https://github.com/jovoro/paste</address></a></small></body></html>";
+		echo "<html><head><title>Paste</title></head><body><h1>Paste</h2><p>This is a web based clipboard. To paste stuff, do something like this:</p><pre>echo helloworld | curl -X POST --data @- https://".$_SERVER["SERVER_NAME"]."/</pre><p>You will get an identification string. When handling newlines or when sending binary data, use the <code>--data-binary</code> option for curl.</p><p>To retrieve stuff do:</p><pre>curl https://".$_SERVER["SERVER_NAME"]."/?id=&lt;identification-string&gt;</pre><hr><small>Copyright (c) 2026 J. von Rotz <a href=\"https://github.com/jovoro/paste\"><address>https://github.com/jovoro/paste</address></a></small></body></html>";
 		exit();
 	}
 

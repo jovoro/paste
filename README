@@ -8,4 +8,6 @@ abc123def
 
 $ curl https://paste.jovoro.ch/?id=abc123def | process_important_output.pl
 
+If you want to preserve line breaks in your text or if you are sending binary data, use the --data-binary option for curl. 
+
 
