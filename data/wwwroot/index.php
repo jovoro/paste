@@ -42,7 +42,7 @@ if($_SERVER["REQUEST_METHOD"] != "POST") {
 		echo $hex."\n";
 	} else {
 		header($_SERVER["SERVER_PROTOCOL"]." 500 Unable to write");
-		echo "Path $fname is not writable";
+		echo "Path $path is not writable";
 		exit();
 	}
 }
